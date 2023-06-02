@@ -69,6 +69,10 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
+  -- copilot
+  'github/copilot.vim',
+  
+
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -190,6 +194,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
