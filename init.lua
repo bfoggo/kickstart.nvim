@@ -213,7 +213,6 @@ require('lazy').setup({
 vim.o.hlsearch = false
 
 -- Make line numbers default
-vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Enable mouse mode
@@ -228,7 +227,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.o.undofile = false
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
