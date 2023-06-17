@@ -69,10 +69,6 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- copilot
-  'github/copilot.vim',
-
-
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -96,6 +92,13 @@ require('lazy').setup({
   },
 
   {
+  "zbirenbaum/copilot-cmp",
+  config = function ()
+    require("copilot_cmp").setup()
+  end
+},
+
+  {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -106,6 +109,9 @@ require('lazy').setup({
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
 
+      -- Adds copilot integration
+      'zbirenbaum/copilot.lua',
+      "zbirenbaum/copilot-cmp",
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
@@ -511,6 +517,7 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
@@ -518,3 +525,7 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
