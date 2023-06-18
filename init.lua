@@ -78,6 +78,18 @@ require('lazy').setup({
       codewindow.apply_default_keybinds()
     end,
   },
+  -- symbol outline
+  {
+    'simrat39/symbols-outline.nvim',
+    keys = {
+      { '<leader>so', '<cmd>SymbolsOutline<CR>' },
+    },
+    config = function()
+      vim.g.symbols_outline = {
+        auto_close = true,
+      }
+    end,
+  },
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -102,9 +114,6 @@ require('lazy').setup({
 
   {
     "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
   },
 
   {
@@ -539,3 +548,5 @@ require("copilot").setup({
   suggestion = { enabled = false },
   panel = { enabled = false },
 })
+
+require("symbols-outline").setup()
