@@ -69,26 +69,14 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- scrollbar
+  -- Scroll
+  "dstein64/nvim-scrollview",
+  -- Tree
   {
-    'gorbit99/codewindow.nvim',
+    "nvim-tree/nvim-tree.lua",
     config = function()
-      local codewindow = require('codewindow')
-      codewindow.setup()
-      codewindow.apply_default_keybinds()
-    end,
-  },
-  -- symbol outline
-  {
-    'simrat39/symbols-outline.nvim',
-    keys = {
-      { '<leader>so', '<cmd>SymbolsOutline<CR>' },
-    },
-    config = function()
-      vim.g.symbols_outline = {
-        auto_close = true,
-      }
-    end,
+      require("nvim-tree").setup()
+    end
   },
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -575,4 +563,3 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require("symbols-outline").setup()
