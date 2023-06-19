@@ -113,7 +113,22 @@ require('lazy').setup({
   },
 
   {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false }
+      })
+    end,
+  },
+
+  {
     "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
   },
 
   {
@@ -560,9 +575,4 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require("copilot").setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
-
 require("symbols-outline").setup()
