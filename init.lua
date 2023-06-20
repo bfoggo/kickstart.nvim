@@ -164,8 +164,11 @@ require('lazy').setup({
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
+  },
+  {
+    "EdenEast/nightfox.nvim",
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'nightfox'
     end,
   },
 
@@ -176,7 +179,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'nightfox',
         component_separators = '|',
         section_separators = '',
       },
