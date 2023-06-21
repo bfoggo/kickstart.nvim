@@ -168,7 +168,16 @@ require('lazy').setup({
   {
     "EdenEast/nightfox.nvim",
     config = function()
-      vim.cmd.colorscheme 'nightfox'
+      require('nightfox').setup({
+        options = {
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          }
+        }
+      })
+      vim.cmd.colorscheme 'nordfox'
     end,
   },
 
@@ -179,7 +188,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'nightfox',
+        theme = 'nordfox',
         component_separators = '|',
         section_separators = '',
       },
